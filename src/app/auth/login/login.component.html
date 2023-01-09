@@ -1,0 +1,41 @@
+<body>
+    <div alligment="center">
+        
+    </div>
+
+    <div class="container" alligment="center">
+        <img height="120" margin="auto"
+            src="../../../assets/boostrap_xavia/xavia_identidad_todocolor.png" />
+        <div class='col-md-4 offset-4 mt-5' *ngIf='!this.isLogin'>
+            <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+
+                <div class="brand-title">Inicie Sesion</div>
+                <div class="inputs">
+                    <label>Correo Electronico</label>
+                    <input class='form-control' type="email" name="email" placeholder="email@example.com" ngModel
+                        #email="ngModel" [email]="true" required
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                    <div *ngIf="email.errors?.['pattern']">
+                        <small>Debe proporcionar un email valido</small>
+                    </div>
+                    <label>Contraseña</label>
+                    <input class='form-control' type="password" name="password" placeholder="Minimo 8 caracteres"
+                        ngModel required minlength="8" #password="ngModel">
+                    <div *ngIf="password.errors?.['minlength']">
+                        <small>La contraseña debe tener minimo 8 caracteres</small>
+                    </div>
+                    <div *ngIf="!email.errors && !password.errors">
+                        <button type="submit">Iniciar Sesion</button>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </form>
+        </div>
+        <div class='col-md-4 offset-4 mt-5' *ngIf='this.isLogin'>
+            <label>Ya esta logueado</label>
+            <button class='btn btn-outline-info' (click)='logout()'>Cerrar Sesion</button>
+        </div>
+    </div>
+</body>

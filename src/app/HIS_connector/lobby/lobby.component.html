@@ -1,0 +1,23 @@
+<body>
+    <div class="container" alligment="center">
+        <div class='row m-0 w-100'>
+            <div class='col-md-4 offset-4 mt-5'>
+                <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                    <div class="brand-title">Buscar documento clinico</div>
+                    <div class="inputs">
+                        <div class='form-group'>
+                            <input class='form-control' type="text" name="nombre" placeholder="Parametro 1" ngModel>
+                        </div>
+                        <div class='form-group'>
+                            <input class='form-control' type="text" name="apellido" placeholder="Parametro 2" ngModel>
+                        </div>
+                        <div class='form-group'>
+                            <input class='form-control' type="email" name="email" placeholder="Parametro 3" ngModel>
+                        </div>
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

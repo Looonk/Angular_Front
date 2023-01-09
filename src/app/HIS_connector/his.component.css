@@ -1,0 +1,22 @@
+.example-icon{
+    margin: 3rem;
+  }
+
+mat-button{
+  margin: 15px;
+  padding: 15px;
+}
+mat-toolbar{
+  background: rgb(57, 119, 57);
+}
+
+.button2 {
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  background: rgb(57, 119, 57);
+  height: 40px;
+  cursor: pointer;
+  font-weight: 900;
+  border: white;
+}

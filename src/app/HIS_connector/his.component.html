@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <button mat-button [routerLink]="['/his/search']" routerLinkActive="active"
+    aria-label="Example icon-button with menu icon">
+    Buscar documento clinico
+  </button>
+  <button mat-button [routerLink]="['/his/view']" routerLinkActive="active"
+    aria-label="Example icon-button with menu icon">
+    Visualizar documento clinico
+  </button>
+</mat-toolbar>
+
+<button class="button2" aria-label="Example icon button with a home icon"
+  (click)="startHL7Service()">
+  Iniciar Servicio Hl7
+  <!-- <mat-icon>settings_applications</mat-icon> -->
+</button>

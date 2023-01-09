@@ -1,0 +1,30 @@
+<div class="brand-title">Lista de usuarios</div>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Nombre de Usuario</th>
+        <th>Rol</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user['id']}}</td>
+        <td>{{user['nombre']}}</td>
+        <td>{{user['apellido']}}</td>
+        <td>{{user['email']}}</td>
+        <td>{{user['username']}}</td>
+        <td>{{user['roles']}}</td>
+        <td>
+            <button mat-fab color="accent" type="submit" aria-label="Example icon button with a home icon"
+                (click)="update(user.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+        <td> <button mat-fab color="warn" type="submit" aria-label="Example icon button with a home icon"
+                (click)="delete(user.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </tr>
+</table>

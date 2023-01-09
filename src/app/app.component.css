@@ -1,0 +1,14 @@
+.example-icon{
+    margin: 3rem;
+  }
+  mat-button{
+    margin: 15px;
+    padding: 15px;
+    
+  }
+  mat-toolbar{
+    /*  //background: url("../assets/boostrap_xavia/Graficadeapoyo_xavia.png");  */
+    background-color: rgb(57, 119, 57);
+    
+
+  }

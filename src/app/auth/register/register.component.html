@@ -1,0 +1,57 @@
+<body>
+    <div class="container" alligment="center">
+        <div class='col-md-4 offset-4 mt-5' *ngIf='!this.isLogin'>
+            <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                <!-- <div class="brand-logo"></div> -->
+                <div class="brand-title">Registrar usuario</div>
+                <div class="inputs">
+                    <label>Nombre</label>
+                    <input class='form-control' type="text" name="nombre" placeholder="John" ngModel required
+                        #nombre="ngModel">
+                    <div *ngIf="nombre.errors?.['required']">
+                       <small>"Nombre" es un campo obligatorio.</small>
+                    </div>
+                    <label>Apellido</label>
+                    <input class='form-control' type="text" name="apellido" placeholder="Doe" ngModel required
+                        #apellido="ngModel">
+                    <div *ngIf="apellido.errors?.['required']">
+                       <small>"Apellido" es un campo obligatorio.</small> 
+                    </div>
+                    <label>Nombre de usuario</label>
+                    <input class='form-control' type="text" name="username" placeholder="johndoe" ngModel required
+                        #username="ngModel">
+                    <div *ngIf="username.errors?.['required']">
+                        <small>"Nombre de usuario" es un campo obligatorio.</small>
+                    </div>
+                    <label>Correo Electronico</label>
+                    <input class='form-control' type="email" name="email" placeholder="email@example.com" ngModel
+                        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required email="true"
+                        #email="ngModel">
+                    <div *ngIf="email.errors?.['required']">
+                        <small>"Correo Electronico" es un campo obligatorio.</small>
+                    </div>
+                    <div *ngIf="email.errors?.['pattern']">
+                       <small>Debe proporcionar un correo electronico valido.</small> 
+                    </div>
+                    <yolo class='form-group' ngDefaultControl type="roles" name="roles" value="User" ngModel></yolo>
+                    <label>Contraseña</label>
+                    <input class='form-control' type="password" name="password" placeholder="Minimo 8 caracteres"
+                        ngModel required minlength="8" #password="ngModel">
+                    <div *ngIf="password.errors?.['minlength']">
+                        <small>La contraseña debe tener minimo 8 caracteres.</small>
+                    </div>
+                    <div *ngIf="password.errors?.['required']">
+                        <small>"Contraseña" es un campo obligatorio.</small>
+                    </div>
+                    <div
+                        *ngIf="!password.errors && !email.errors && !username.errors && !apellido.errors && !nombre.errors">
+                        <button type="submit">Registrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class='col-md-4 offset-4 mt-5' *ngIf='this.isLogin'>
+            <label>Ya esta logueado</label>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,31 @@
+<body>
+    <div class="container" alligment="center">
+        <div class='row m-0 w-100'>
+            <div class='col-md-4 offset-4 mt-5'>
+                <div class="brand-title">Modificar usuario</div>
+                <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+                    <div class="inputs">
+
+                        <div class='form-group'>
+                            <input class='form-control' type="text" name="nombre" value={{nombre}} ngModel>
+                        </div>
+                        <div class='form-group'>
+                            <input class='form-control' type="text" name="apellido" value={{apellido}} ngModel>
+                        </div>
+                        <input class='form-control' type="email" name="email" value={{email}} ngModel #email="ngModel"
+                            [email]="true" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        <div *ngIf="email.errors?.['pattern']">
+                            <small>Debe proporcionar un email valido</small>
+                        </div>
+                        <div class='form-group'>
+                            <input class='form-control' type="roles" name="roles" value={{roles}} ngModel>
+                        </div>
+                        <div *ngIf="!email.errors">
+                            <button type="submit">Modificar usuario</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
